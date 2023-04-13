@@ -15,9 +15,11 @@ namespace MVCApplication.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("hello hello");
             return View();
         }
 
+        [Route("/contact-us")]
         public IActionResult Privacy()
         {
             return View();
