@@ -15,6 +15,7 @@ namespace MVCApplication.Middleware
         {
             if(context.GetEndpoint() is null) 
             {
+                // End point not selected.
 
             } else
             {
