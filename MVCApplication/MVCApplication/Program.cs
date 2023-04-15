@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using MVCApplication.Middleware;
 
 namespace Program
@@ -41,7 +42,13 @@ namespace Program
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "blog/{*article}",
+                defaults: new {controller = "Blogs", action = "Article"}          
+                );
+
+
             app.UseMiddleware<FeatureSwitchMiddleware>();
 
             app.UseEndpoints(endpoints =>
