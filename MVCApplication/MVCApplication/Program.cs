@@ -7,6 +7,7 @@ namespace Program
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
             builder.Logging.AddEventLog(eventLogSettings =>
             {
                 eventLogSettings.SourceName = "MyLogs";

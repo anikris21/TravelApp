@@ -4,6 +4,7 @@ using System.Diagnostics;
 
 namespace MVCApplication.Controllers
 {
+    [TypeFilter(typeof(OutageAuthFilter))]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
