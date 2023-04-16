@@ -20,8 +20,16 @@ namespace MVCApplication.Controllers
             return View();
         }
 
+        [HttpGet]
         [Route("/contact-us")]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Route("/contact-us", Name = "Contact form")]
+        public IActionResult Contact([FromForm] Contact info)
         {
             return View();
         }
@@ -32,4 +40,13 @@ namespace MVCApplication.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    public class Contact
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+    }
+
+
+    
 }

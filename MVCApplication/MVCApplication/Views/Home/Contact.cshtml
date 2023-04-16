@@ -1,0 +1,29 @@
+﻿
+@model MVCApplication.Controllers.Contact
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<h1>Contact</h1>
+<p> Let us know your thoughts.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <form asp-route="contact-us" method="post">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input type="text" asp-for="Name" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input type="text" asp-for="Email"/>
+                </div>
+                <button type="submit"> Submit </button>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
