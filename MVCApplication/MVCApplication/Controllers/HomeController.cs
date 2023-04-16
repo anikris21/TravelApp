@@ -21,8 +21,16 @@ namespace MVCApplication.Controllers
         }
 
         [HttpGet]
-        [Route("/contact-us")]
+        [Route("/privacy")]
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+
+        [HttpGet]
+        [Route("/contact-us")]
+        public IActionResult Contact()
         {
             return View();
         }
