@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MVCApplication.Middleware;
+using MVCApplication.Model_Binding;
 
 namespace Program
 {
@@ -16,6 +17,10 @@ namespace Program
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddMvc(option =>
+            {
+                option.ModelBinderProviders.Insert(0, new CVSModelBinderProvider());
+            });
 
             var app = builder.Build();
 
