@@ -8,6 +8,7 @@ namespace MVCApplication.Model_Binding
 
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
+            // csv = "pencil, 1, to write"
             var rawCSV = bindingContext.ValueProvider.GetValue("csv").ToString();
             var csv = rawCSV.Split(Environment.NewLine.ToCharArray());
 
